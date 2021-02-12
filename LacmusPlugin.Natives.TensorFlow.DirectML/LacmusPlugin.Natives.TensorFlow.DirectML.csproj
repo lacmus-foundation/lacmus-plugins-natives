@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <AssemblyName>LacmusPlugin.Natives.TensorFlow.DirectML</AssemblyName>
+        <PackageId>LacmusPlugin.Natives.TensorFlow.DirectML</PackageId>
+        <Version>1.15.4</Version>
+        <Authors>Lacmus Foundation</Authors>
+        <Company>Lacmus Foundation</Company>
+        <RepositoryUrl>https://github.com/lacmus-foundation/lacmus-plugins-natives</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>
+            Distribution of the TensoFlow-direcML library.
+            The libraries can be directly downloaded from https://github.com/microsoft/tensorflow-directml
+        </Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+
+        <PackageProjectUrl>https://github.com/lacmus-foundation/lacmus-plugins-natives</PackageProjectUrl>
+        <PackageTags>native;tensorflow;machine-learning;ML</PackageTags>
+        <PackageOutputPath>../packages</PackageOutputPath>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\natives\tensorflow-directml-1-15\lib\tensorflow.dll;
+                          ..\natives\tensorflow-directml-1-15\lib\tensorflow.lib;
+                          ..\natives\tensorflow-directml-1-15\lib\tensorflow_framework.dll;
+                          ..\natives\tensorflow-directml-1-15\lib\DirectML.bdb07c797e1af1b4a42d21c67ce5494d73991459.dll;
+                          ..\natives\tensorflow-directml-1-15\LICENSE;
+                          ..\natives\tensorflow-directml-1-15\DirectML_LICENSE.txt">
+            <PackagePath>runtimes/win-x64/native/%(Filename)%(Extension)</PackagePath>
+            <Pack>true</Pack>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
